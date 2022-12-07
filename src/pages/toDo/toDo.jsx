@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {FcCancel} from 'react-icons/fc'
+import { Contexto } from "../../Components/NavbarHeader/Context/MiContexto";
+import GlobalStyle from '../../GlobalStyles/GlobalStyles';
 import { Btn, Container, FormContainer, InputTask, ItemTask, ListTask } from "./toDoStyles";
+
 
 export const ToDo = () => {
 
@@ -30,6 +33,7 @@ export const ToDo = () => {
         }
         setInputTask('');
     }
+    
 
     useEffect(() => {
 		localStorage.setItem('task', JSON.stringify(task));
@@ -38,7 +42,7 @@ export const ToDo = () => {
     const DeleteTaskAll = e => {
         window.confirm('Desea eliminar todas las tareas ?') 
         ? setTask([])
-        : setTask();
+        : setTask(task);
     }
 
     const DeleteTask = e => {
@@ -50,7 +54,10 @@ export const ToDo = () => {
       }
     }
 
+  
     return (
+   <>
+     
          <Container>
             <h2>Ingresa una tarea: </h2>
             <FormContainer onSubmit={AddTask}>
@@ -65,5 +72,6 @@ export const ToDo = () => {
             </ListTask>
             <Btn onClick={DeleteTaskAll}>Borrar tareas</Btn>
         </Container>
+        </>
     )
 }

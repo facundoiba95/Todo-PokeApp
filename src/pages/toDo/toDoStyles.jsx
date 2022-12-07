@@ -6,7 +6,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 background-color:#181818;
-width:100vw;
+width:100%;
 height:100vh;
 gap:10px;
 color:yellow;
