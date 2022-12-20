@@ -35,7 +35,9 @@ height:40px;
 border-radius:5px;
 cursor:pointer;
 font-size:0.9rem;
+display: ${prop => prop.visible ? 'block': 'none'}
 `
+
 
 export const ListTask = styled.ul`
 display:flex;
