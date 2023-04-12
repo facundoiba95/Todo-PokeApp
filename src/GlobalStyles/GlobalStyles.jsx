@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
 }
+body{
+    background-color:#181818;
+
+}
 `;
 
 export default GlobalStyle;

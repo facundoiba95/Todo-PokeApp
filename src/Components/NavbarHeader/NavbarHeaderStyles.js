@@ -16,6 +16,7 @@ align-items:center;
 }
 @media (max-width: 480px){
     justify-content:space-between;
+    padding-right: 10px;
     .iconStyle{
     display:block;
     color:white;

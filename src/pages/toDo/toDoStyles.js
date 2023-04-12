@@ -3,13 +3,19 @@ import styled from "styled-components";
 export const Container = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
+justify-content:start;
 align-items:center;
-background-color:#181818;
 width:100%;
-height:100vh;
+height:100%;
 gap:10px;
-color:yellow;
+color:white;
+padding-top:4rem;
+padding-bottom:4rem;
+
+.titleTasksStatus{
+    margin-top:4rem;
+    text-align:center;
+}
 `
 
 export const FormContainer = styled.form`
@@ -17,8 +23,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-color:black;
-gap:10px;
+gap:20px;
 `
 
 export const InputTask = styled.input`
@@ -31,11 +36,13 @@ padding-left:10px;
 
 export const Btn = styled.button`
 width:140px;
-height:40px;
-border-radius:5px;
+height:30px;
+border:none;
+border-radius:3px;
 cursor:pointer;
 font-size:0.9rem;
-display: ${prop => prop.visible ? 'block': 'none'}
+font-weight: 300;
+display: ${prop => prop.visible ? 'block': 'none'};
 `
 
 
@@ -46,7 +53,7 @@ align-items:center;
 flex-direction:column;
 list-style: none;
 width:80%;
-gap:10px;
+gap:20px;
 `
 
 export const ItemTask = styled.li`
@@ -54,9 +61,15 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 color:white;
-width:300px;
-border:1px solid yellowgreen;
+width:100%;
+max-width:500px;
+min-width:300px;
+border-bottom: 1px solid #383737;
 font-size:1.2rem;
 padding:5px 5px;
-border-radius:10px;
+
+span {
+    display:${props => props.isFinish == true ? 'none' : 'flex'};
+    gap: 5px;
+}
 `
